@@ -1,41 +1,44 @@
-import Foundation
+// 24.01.29
 
-/* 정대리 1일차 */
-// 조건문
-var isDarkModeOn: Bool = true
+// 정대리 forEach
 
-if isDarkModeOn == true {
-    print("다크모드입니다")
-} else {
-    print("다크모드가 아닙니다")
+//콜렉션: 테이터를 모아둔 것 (배열, 셋, 딕셔너리, 튜플)
+
+// 배열
+var myArray: [Int] = [1,2,3,4,5,6,7,8,8,10]
+
+//forEach
+
+for element in myArray {
+    print(element)
 }
 
-if isDarkModeOn != true {
-    print("다크모드가 아닙니다")
-} else {
-    print("다크모드입니다")
+for element in myArray where element > 5{
+    print("5보다 큰 수 : \(element)")
 }
 
-if isDarkModeOn {
-    print("다크모드입니다")
-} else {
-    print("다크모드가 아닙니다")
+for element in myArray where element % 2 == 0 {
+    print("짝수 \(element)")
 }
 
-if !isDarkModeOn {
-    print("다크모드가 아닙니다")
-} else {
-    print("다크모드입니다")
-}
+//
 
-// 삼항연산자
+//야곰 swift programming 책
+var height = 18.1
+print(type(of: height))
 
-var title: String = isDarkModeOn ? "다크모드입니다" : "다크모드가 아닙니다"
+var myIdeaSwitch: Bool = false
+myIdeaSwitch.toggle()
 
-print(title)
+print(myIdeaSwitch)
 
+var floatValue: Float = 1234567890.1
+var doubleValue: Double = 1234567890.1
 
+print("floatValue: \(floatValue), doubleValue: \(doubleValue)")
+floatValue = 56.198685991 + 34.08651
+doubleValue = 56.198685991 + 34.08651
 
-
-
+print(floatValue)
+print(doubleValue)
 
