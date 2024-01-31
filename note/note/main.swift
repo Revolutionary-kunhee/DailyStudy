@@ -1,44 +1,38 @@
 // 24.01.29
 
-// 정대리 forEach
-
-//콜렉션: 테이터를 모아둔 것 (배열, 셋, 딕셔너리, 튜플)
-
-// 배열
-var myArray: [Int] = [1,2,3,4,5,6,7,8,8,10]
-
-//forEach
-
-for element in myArray {
-    print(element)
+// 정대리 enum
+enum School {
+    case elementary
+    case middle
+    case high
 }
 
-for element in myArray where element > 5{
-    print("5보다 큰 수 : \(element)")
+let userSchool: School = School.elementary
+print("mySchool is \(userSchool)")
+
+enum Grade: Int {
+    case first = 1
+    case second = 2
 }
 
-for element in myArray where element % 2 == 0 {
-    print("짝수 \(element)")
+let userGrade: Int = Grade.first.rawValue
+print(userGrade)
+
+enum SchoolDetail {
+    case elementary(name: String)
+    case middle(name: String)
+    
+    func getInputValue() -> String {
+        switch self{
+        case .elementary(let name):
+            return name
+        case .middle(let name):
+            return name
+        }
+    }
 }
 
-//
 
-//야곰 swift programming 책
-var height = 18.1
-print(type(of: height))
+var userElementaryName: SchoolDetail = SchoolDetail.elementary(name: "대한초등학교")
 
-var myIdeaSwitch: Bool = false
-myIdeaSwitch.toggle()
-
-print(myIdeaSwitch)
-
-var floatValue: Float = 1234567890.1
-var doubleValue: Double = 1234567890.1
-
-print("floatValue: \(floatValue), doubleValue: \(doubleValue)")
-floatValue = 56.198685991 + 34.08651
-doubleValue = 56.198685991 + 34.08651
-
-print(floatValue)
-print(doubleValue)
-
+print(userElementaryName.getInputValue())
